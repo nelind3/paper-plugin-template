@@ -1,4 +1,5 @@
 name: PluginTemplate
-version: 1.0.0
+version: ${version}
+author: nelind
 main: dk.nelind.papertemplate.PluginMain
-api-version: 1.19
+api-version: ${apiversion}

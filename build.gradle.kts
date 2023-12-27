@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "dk.nelind"
-version = "1.0.0"
+version = "${properties["plugin_version"]}+${properties["minecraft_version"]}"
 
 repositories {
     mavenCentral()
@@ -26,6 +26,15 @@ tasks {
     }
 
     processResources {
+        inputs.property("version", project.version)
+        inputs.property("apiversion", project.properties["minecraft_version"].toString().subSequence(0,4))
+
         include("plugin.yml")
+        filesMatching("plugin.yml") {
+            expand(
+                "version"    to project.version,
+                "apiversion" to project.properties["minecraft_version"].toString().subSequence(0,4)
+            )
+        }
     }
 }
