@@ -29,7 +29,6 @@ tasks {
         inputs.property("version", project.version)
         inputs.property("apiversion", project.properties["minecraft_version"].toString().subSequence(0,4))
 
-        include("plugin.yml")
         filesMatching("plugin.yml") {
             expand(
                 "version"    to project.version,
