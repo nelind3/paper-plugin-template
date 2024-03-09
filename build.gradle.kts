@@ -1,5 +1,6 @@
 plugins {
     id("java")
+    kotlin("jvm") version "1.9.23"
     id("xyz.jpenilla.run-paper") version "1.1.0"
 }
 
@@ -13,6 +14,7 @@ repositories {
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:${properties["minecraft_version"]}-${properties["paper_api_release"]}")
+    implementation(kotlin("stdlib-jdk8"))
 }
 
 java {
